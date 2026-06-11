@@ -30,7 +30,7 @@ This project is built directly within a controlled Linux environment:
 
 ## Roadmap
 
-- [x] Finalize the KydeOS 1.0 base build
+- [ ] Finalize the KydeOS 1.0 base build
 - [ ] Stabilize Material 3 UI/UX integration
 - [ ] Develop exclusive app ecosystem (Planned)
 - [ ] Establish a dedicated APT repository for system/app updates
