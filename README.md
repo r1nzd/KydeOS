@@ -12,7 +12,7 @@ A personal operating system based on Debian, customized with a Material 3 UI.
 3. Export and test on QEMU.
 
 ##  Roadmap
-- [Tick] Finalize the KydeOS 1.0 base build
+- [✓] Finalize the KydeOS 1.0 base build
 - [ ] Customize UI/UX with Material 3
 - [ ] Develop exclusive app ecosystem / Store (Planned)
 
