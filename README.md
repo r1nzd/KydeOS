@@ -1,46 +1,30 @@
-<div align="center">
-
-# KydeOS — Aurora
-
-**A free, open-source Linux operating system built on Debian**  
-Designed with Material 3 Expressive + Fluent design language, powered by a custom shell written in Rust.
-
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Version](https://img.shields.io/badge/Version-0.1--Aurora-purple)]()
-[![Status](https://img.shields.io/badge/Status-Early%20Development-orange)]()
-[![Base](https://img.shields.io/badge/Base-Debian%20Bookworm-red)]()
-
-</div>
+# KydeOS
+A free, open-source operating system based on Debian, heavily customized with a Material 3 Expressive + Fluent UI. This project is built and maintained primarily as a solo development endeavor.
 
 ---
 
-## Overview
+## IMPORTANT DISCLAIMER / WARNING
+USE AT YOUR OWN RISK. This operating system is an experimental, personal project in its early stages of development.
 
-KydeOS is a free, open-source Linux-based operating system built on Debian Stable. It aims to bridge the gap between rock-solid stability and a clean, modern desktop experience — without the bloat.
-
-KydeOS features a custom desktop environment called **KydeShell**, written from scratch in Rust, with a design language that blends Material 3 Expressive and Microsoft Fluent into something uniquely its own.
+- **No Warranty:** The system is provided "as is", without warranty of any kind.
+- **Data Loss Risk:** Testing or installing this OS may lead to system instability, boot failures, or data loss. Ensure you back up all important data before attempting to run or install KydeOS.
+- **Not for Production:** Do not use this as your primary operating system for daily, critical work.
 
 ---
 
 ## Key Features
-
-- **Custom Desktop Environment** — KydeShell, built from scratch in Rust
-- **Material 3 Expressive + Fluent** design language
-- **Inter** as the system font
-- **Self-designed icon set**
-- **Wayland** display server with XWayland fallback
-- **Debian Bookworm** base with Linux LTS kernel
-- **Lightweight** — targeting ~100MB RAM idle, sub-10s boot time
-- **UEFI + Legacy BIOS** support (GPT + MBR)
-- **x86_64 + ARM** architecture support
-- **90+ languages** supported
-- **No Snap** — `.deb` native + Flatpak + AppImage
-- **Free** — no cost, no ads, no telemetry (opt-in only)
+- **Material 3 Expressive + Fluent UI/UX:** Comprehensive visual customization designed to provide a modern, sleek, and unified desktop experience.
+- **KydeShell:** Custom desktop environment built from scratch in Rust.
+- **Performance Optimization:** Stripped of unnecessary bloatware and background services, targeting ~300MB RAM idle and sub-10s boot time.
+- **Debian Foundation:** Inherits the rock-solid stability and vast software repository of Debian Stable (Bookworm), running a Linux LTS kernel.
+- **Wayland** display server with XWayland fallback. x86_64 and ARM supported.
+- **Inter** system font, custom-designed icon set.
+- **No Snap** — Native `.deb` + Flatpak + AppImage only.
+- **90+ languages** supported. Free forever, no ads, no telemetry (opt-in only).
 
 ---
 
 ## Built-in Apps
-
 | App | Description |
 |-----|-------------|
 | **Krowser** | Custom browser built by the developer |
@@ -53,7 +37,6 @@ KydeOS features a custom desktop environment called **KydeShell**, written from 
 ---
 
 ## Update Channels
-
 | Channel | Description |
 |---------|-------------|
 | 🌙 **Nightly** | Automated nightly builds, most experimental |
@@ -63,42 +46,18 @@ KydeOS features a custom desktop environment called **KydeShell**, written from 
 
 ---
 
-## Technical Specifications
+## Build & Test Guide (For Devs / Contributors)
+This project is built directly within a controlled Linux environment:
 
-| Component | Choice |
-|-----------|--------|
-| Base | Debian Bookworm (12) |
-| Kernel | Linux LTS |
-| Init | systemd |
-| Display | Wayland + XWayland |
-| Shell | KydeShell (Rust) |
-| Audio | PipeWire |
-| Packages | .deb + Flatpak + AppImage |
-| Boot | UEFI (GPT) + Legacy BIOS (MBR) |
-| Arch | x86_64, ARM |
-| Font | Inter |
-| License | GPL-3.0 |
-
----
-
-## Build Guide
-
-### Requirements
-
-- Debian/Ubuntu Linux (or WSL2 with Debian)
-- `live-build`, `debootstrap`
-
-### Setup
+- **Environment:** WSL2 (Debian Bookworm)
+- **Toolchain:** `live-build`, `debootstrap`
+- **Testing:** ISO packaged and tested directly inside QEMU with OVMF (UEFI firmware)
 
 ```bash
-# Clone the repo
 git clone https://github.com/r1nzd/KydeOS.git
 cd KydeOS
-
-# Install dependencies
 sudo apt install live-build debootstrap -y
 
-# Configure
 lb config \
   --distribution bookworm \
   --architectures amd64 \
@@ -108,57 +67,32 @@ lb config \
   --bootloaders grub-efi \
   --uefi-secure-boot disable
 
-# Build
 sudo lb build
 ```
 
-### Testing
-
-```bash
-# Test with QEMU
-qemu-system-x86_64 \
-  -cdrom live-image-amd64.hybrid.iso \
-  -m 2G \
-  -boot d \
-  -bios /usr/share/ovmf/OVMF.fd \
-  -vga std
-```
+*(Note: Automated CI/CD pipelines are utilized for compiling and managing release builds via GitHub Actions.)*
 
 ---
 
 ## Roadmap
-
-- [x] Bootable base ISO (Debian + Linux LTS)
-- [x] GitHub repository setup
-- [ ] KydeShell v0.1 (Rust, Wayland compositor)
-- [ ] KydeOS branding (hostname, os-release, GRUB theme)
-- [ ] OOBE (Out-of-box experience) setup wizard
+- [x] Bootable KydeOS base ISO
+- [ ] Finalize the KydeOS 1.0 base build
+- [ ] KydeShell v0.1 — custom Wayland compositor in Rust
+- [ ] Stabilize Material 3 Expressive + Fluent UI/UX integration
+- [ ] OOBE setup wizard
 - [ ] Custom icon set
 - [ ] KydeStore v0.1
 - [ ] Krowser integration
-- [ ] Installer (custom, not Calamares)
-- [ ] ARM build
-- [ ] KydeOS 1.0 stable release
-
----
-
-## Community
-
-- 💬 **Discord** — coming soon
-- 🐛 **Issues** — [GitHub Issues](https://github.com/r1nzd/KydeOS/issues)
+- [ ] Custom installer (not Calamares)
+- [ ] Establish a dedicated APT repository for system/app updates
+- [ ] Develop exclusive app ecosystem
+- [ ] ARM architecture support
 
 ---
 
 ## License
-
-KydeOS is licensed under the **GNU General Public License v3.0**.  
-See [LICENSE](LICENSE) for details.
-
-> This project is experimental and provided "as is" without warranty of any kind.  
-> Data loss risk exists — always test in a virtual machine first.
+This project is released under the **GNU General Public License v3.0** ([LICENSE](LICENSE)).
 
 ---
 
-<div align="center">
-Made with ❤️ by <a href="https://github.com/r1nzd">r1nzd</a>
-</div>
+<div align="center">Made with ❤️ by <a href="https://github.com/r1nzd">r1nzd</a></div>
