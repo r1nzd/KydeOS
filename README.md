@@ -2,7 +2,7 @@
 
 # KydeOS
 
-A free, open-source operating system based on Debian, heavily customized with a Material 3 Expressive + Fluent UI. This project is built and maintained primarily as a solo development endeavor.
+A personal, experimental operating system based on Debian, heavily customized with a Material 3 Expressive UI. This project is built and maintained primarily as a solo development endeavor.
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Version](https://img.shields.io/badge/Version-0.1--Aurora-purple)]()
@@ -22,7 +22,7 @@ USE AT YOUR OWN RISK. This operating system is an experimental, personal project
 - **Not for Production:** Do not use this as your primary operating system for daily, critical work.
 
 ## Key Features
-- **Material 3 Expressive + Fluent UI/UX:** Comprehensive visual customization designed to provide a modern, sleek, and unified desktop experience.
+- **Material 3 Expressive UI/UX:** Comprehensive visual customization designed to provide a modern, sleek, and unified desktop experience.
 - **KydeShell:** Custom desktop environment built from scratch in Rust.
 - **Performance Optimization:** Stripped of unnecessary bloatware and background services, targeting ~300MB RAM idle and sub-10s boot time.
 - **Debian Foundation:** Inherits the rock-solid stability and vast software repository of Debian Stable (Bookworm), running a Linux LTS kernel.
@@ -75,7 +75,7 @@ sudo lb build
 - [x] Bootable KydeOS base ISO
 - [ ] Finalize the KydeOS 1.0 base build
 - [ ] KydeShell v0.1 — custom Wayland compositor in Rust
-- [ ] Stabilize Material 3 Expressive + Fluent UI/UX integration
+- [ ] Stabilize Material 3 Expressive UI/UX integration
 - [ ] OOBE setup wizard
 - [ ] Custom icon set
 - [ ] KydeStore v0.1
