@@ -14,9 +14,6 @@ impl KydeCompositor {
 
     pub fn run(&mut self) {
         info!("KydeShell compositor running...");
-        // TODO: Smithay event loop
-        // TODO: DRM/KMS backend init
-        // TODO: Input handling
     }
 
     pub fn stop(&mut self) {

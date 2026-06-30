@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-smithay = { version = "0.3", features = ["backend_drm", "backend_libinput", "backend_udev", "wayland_frontend"] }
+smithay = { git = "https://github.com/Smithay/smithay.git", features = ["backend_drm", "backend_libinput", "backend_udev", "wayland_frontend", "desktop"] }
 calloop = "0.12"
 tracing = "0.1"
 tracing-subscriber = "0.3"
