@@ -2,7 +2,7 @@
 
 # KydeOS
 
-A personal, experimental operating system based on Debian, heavily customized with a Material 3 Expressive UI. This project is built and maintained primarily as a solo development endeavor.
+A personal, experimental operating system based on Debian, heavily customized with a Material 3 Expressive UI and a custom desktop environment (KydeShell). This project is built and maintained primarily as a solo development endeavor.
 
 ![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 ![Version](https://img.shields.io/badge/Version-0.1--Aurora-purple)
@@ -40,10 +40,13 @@ USE AT YOUR OWN RISK. This operating system is an experimental, personal project
 
 ## Update Channels
 
+Public release channels for end users:
+
 - **Nightly** — automated nightly builds, most experimental
-- **Alpha** — early testing, for developers
 - **Beta** — feature-complete, community testing
 - **Stable** — official release for end users
+
+*(An internal Alpha channel is also used for early developer testing before features reach Beta.)*
 
 ## Build & Test Guide (For Devs / Contributors)
 
