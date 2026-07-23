@@ -2,12 +2,17 @@ mod compositor;
 mod shell;
 mod config;
 mod input;
+mod backend;
 
 use tracing::info;
 use tracing_subscriber;
-use smithay::reexports::wayland_server::Display;
+use smithay::reexports::{
+    wayland_server::Display,
+    calloop::EventLoop,
+};
 use compositor::KydeCompositor;
 use config::KydeConfig;
+use backend::winit::run_winit;
 
 fn main() {
     tracing_subscriber::fmt::init();
@@ -18,7 +23,10 @@ fn main() {
 
     let display: Display<KydeCompositor> = Display::new().unwrap();
     let display_handle = display.handle();
+    let event_loop: EventLoop<KydeCompositor> = EventLoop::try_new().unwrap();
 
-    let mut comp = KydeCompositor::new(display_handle);
+    let comp = KydeCompositor::new(display_handle);
     info!("KydeShell compositor initialized successfully!");
+
+    run_winit(comp, event_loop);
 }
