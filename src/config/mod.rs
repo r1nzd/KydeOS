@@ -24,7 +24,7 @@ impl Default for KydeConfig {
         KydeConfig {
             taskbar_position: TaskbarPosition::Bottom,
             dark_mode: true,
-            accent_color: "#6750A4".to_string(), // Material 3 purple
+            accent_color: "#6750A4".to_string(),
             font_scale: 1.0,
             animations: true,
         }
@@ -33,7 +33,6 @@ impl Default for KydeConfig {
 
 impl KydeConfig {
     pub fn load() -> Self {
-        // TODO: Load from ~/.config/kydeshell/config.json
         info!("Loading KydeShell config...");
         Self::default()
     }

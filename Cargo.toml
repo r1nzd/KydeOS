@@ -4,7 +4,15 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-smithay = { version = "0.6", features = ["backend_drm", "backend_libinput", "backend_udev", "backend_winit", "renderer_gl", "wayland_frontend", "desktop"] }
+smithay = { version = "0.6", features = ["backend_drm", "backend_libinput", "backend_udev", "backend_winit", "backend_session_libseat", "backend_egl", "backend_gbm", "renderer_gl", "wayland_frontend", "desktop"] }
+udev = "0.8"
+drm = "0.11"
+gbm = "0.14"
+input = "0.8"
+libc = "0.2"
+nix = { version = "0.29", features = ["fs"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
+rustix = { version = "0.38", features = ["fs"] }
 calloop = "0.12"
 tracing = "0.1"
 tracing-subscriber = "0.3"

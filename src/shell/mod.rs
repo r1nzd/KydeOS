@@ -1,3 +1,9 @@
+pub mod taskbar;
+pub mod titlebar;
+pub mod monet;
+pub mod launcher;
+pub mod control_center;
+
 use tracing::info;
 
 pub struct KydeShell {
