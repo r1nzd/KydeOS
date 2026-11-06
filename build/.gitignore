@@ -1,0 +1,7 @@
+chroot/
+binary/
+cache/
+*.iso
+*.log
+wget-log*
+chroot.*
