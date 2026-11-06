@@ -1,0 +1,42 @@
+# Base
+linux-image-amd64
+live-boot
+live-config
+live-config-systemd
+systemd
+dbus
+udev
+
+# Network
+network-manager
+wireless-tools
+wpasupplicant
+
+# Audio
+pipewire
+pipewire-pulse
+wireplumber
+
+# Wayland + compositor
+wayland-protocols
+xwayland
+sway
+swaybg
+swayidle
+swaylock
+waybar
+wofi
+foot
+
+# Fonts
+fonts-noto
+fonts-noto-cjk
+
+# Utils
+bash
+nano
+curl
+wget
+git
+weston
+xwayland

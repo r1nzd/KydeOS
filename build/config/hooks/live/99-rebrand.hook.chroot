@@ -1,0 +1,23 @@
+#!/bin/bash
+# Rebrand KydeOS
+echo "kydeos" > /etc/hostname
+
+cat > /etc/os-release << 'OSEOF'
+PRETTY_NAME="KydeOS Aurora"
+NAME="KydeOS"
+VERSION_ID="0.1"
+VERSION="0.1 (Aurora)"
+ID=kydeos
+ID_LIKE=debian
+HOME_URL="https://github.com/r1nzd/KydeOS"
+SUPPORT_URL="https://github.com/r1nzd/KydeOS/issues"
+BUG_REPORT_URL="https://github.com/r1nzd/KydeOS/issues"
+OSEOF
+
+cat > /etc/motd << 'MOTDEOF'
+
+  Welcome to KydeOS Aurora 0.1
+  Free and open source — GPL-3.0
+  https://github.com/r1nzd/KydeOS
+
+MOTDEOF

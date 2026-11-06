@@ -1,7 +1,9 @@
 chroot/
 binary/
 cache/
+.build/
 *.iso
 *.log
 wget-log*
 chroot.*
+.lock
